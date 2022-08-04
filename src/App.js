@@ -1,15 +1,14 @@
-import React from 'react';
-import './App.css'
-import Login from './Component/Login';
-import Menu from './Component/Menu';
-import MainPage from './View/MainPage';
+import './App.css';
+import OrderView from './feature/order/OrderView';
+import AppNavigation from './navigation/AppNavigation';
+import OrderQty from './feature/order/component/OrderQtyItem';
+import OrderMenu from './feature/order/component/OrderMenu';
 
 function App() {
   return (
-      <div>
-          <Login/>
-          <MainPage/>
-      </div>
+    <div>
+      <AppNavigation/>
+    </div>
   );
 }
 

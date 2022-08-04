@@ -1,7 +1,7 @@
 import { Component } from "react";
 import './Login.css';
 
-class Login extends Component{
+class LoginPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -46,13 +46,11 @@ class Login extends Component{
         }
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault()
-        this.props.callback(this.state);
-        console.log(this.state.email, this.state.password);
+    handleLoggedIn = (props) =>  {
+        props.preventDefault()
         if (this.state.passwordValid && this.state.emailValid) {
             if(this.state.email == 'admin@example.com' && this.state.password=='12345678') {
-                alert('Login success')
+                this.props.handleLoggedIn(true)
             } else {
                 alert('Username or Passoword is wrong')
             }
@@ -63,7 +61,8 @@ class Login extends Component{
 
     render(){
         return(
-            <div className="flex-contrainer">
+            <div className="login-container">
+                <div className="flex-contrainer">
                 <div className="app-title">
                     <div className="title">Welcome</div>
                     <div className="subtitle"><i>Warung Makan Bahari</i></div>
@@ -83,12 +82,14 @@ class Login extends Component{
                         <div className="red">{this.state.passwordErrorMsg}</div>
                         <br/>
                         <br/>
-                        <button  className={`btn btn-primary login inputButtonawesome-button-sm`} type="submit">Login</button>
+                        <button className="submit-button" onClick={this.handleLoggedIn}>Login</button>
                     </form>
                 </div>
             </div>   
+            </div>  
         )
-    }
 }
 
-export default Login
+}
+
+export default LoginPage
