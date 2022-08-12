@@ -1,0 +1,41 @@
+.table-form-input-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    justify-content: flex-start;
+    height: auto;
+    color: rgb(178, 231, 215);
+    min-width: 300px;
+    font-family: sans-serif;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.table-form-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #bbaa29;
+    font-size: 21px
+}
+
+.table-form-input{
+    height: 32px;
+    outline: whitesmoke;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+}
+
+label {
+    color: #bbaa29;
+}
+
+.table-form-action{
+    background-color: #75551e;
+    border: #EEE;
+    height: 25px;
+    border-radius: 5px;
+    align-content: flex-end;
+    color: #ffffff;
+}

@@ -43,12 +43,13 @@
 }
 
 body{
-  min-height: 600px;
   margin: 0;
   padding: 0;
-  background-image: url('../src/asset/bg.jpg');
+  background-image: url('../src/asset/4419157.jpg');
   background-size: cover;
-  /* display: flex; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .contrainer{

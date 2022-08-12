@@ -3,22 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {setupStore} from './app/store'
+import {setupStore} from './../src/shared/state/store'
 import { Provider } from 'react-redux';
-import MenuService from './service/MenuService';
-import { register } from './deps';
+import { apiClientFactory } from './shared/ApiClientFactory';
+import { clientInstance } from './shared/AxiosClient';
+import { AuthProvider } from './shared/context/AuthContext';
+import { serviceFactory } from './service/ServiceFactory';
+import { DependencyProvider } from './shared/context/DependencyContext';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const apiClient = apiClientFactory(clientInstance)
+const services = serviceFactory(apiClient);
 const store = setupStore();
-
-(_ => {
-    register('MenuService', MenuService())
-})()
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <DependencyProvider services={services}>
+        <BrowserRouter>
+          <AuthProvider>
+            <App />
+          </AuthProvider>
+        </BrowserRouter>
+      </DependencyProvider>
     </Provider>
   </React.StrictMode>
 );

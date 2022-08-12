@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { clearOrder } from "../state/OrderAction";
+// import { clearOrder } from "../state/OrderAction";
 
 class OrderList extends Component{
     handleClearOrder = () => {
@@ -38,7 +38,7 @@ class OrderList extends Component{
 }
 
 const mapDispatchToProps = {
-    clearOrder
+    // clearOrder
 }
 
 const mapStateToProps = state => {

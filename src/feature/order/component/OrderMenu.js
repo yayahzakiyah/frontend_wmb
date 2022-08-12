@@ -1,14 +1,14 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { showMenuByFB } from "../../menu/state/MenuAction"
-import { addOrder } from "../state/OrderAction";
+// import { showMenuByFB } from "../../menu/state/MenuAction"
+// import { addOrder } from "../state/OrderAction";
 import OrderQtyItem from "./OrderQtyItem";
-import MenuService from "../../../service/MenuService";
+import { menuService } from './../../../service/MenuService'
 
 class OrderMenu extends Component {
     constructor(props) {
         super(props);
-        this.service = MenuService();
+        this.service = menuService();
         this.state = {
             menuList : [],
             menuSelected: {},
@@ -88,7 +88,7 @@ class OrderMenu extends Component {
 }
 
 const mapDispatchToProps = {
-    showMenuByFB, addOrder
+    // showMenuByFB, addOrder
 }
 
 const mapStateToProps = (state) => {

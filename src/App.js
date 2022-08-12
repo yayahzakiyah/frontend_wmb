@@ -1,13 +1,13 @@
 import './App.css';
 import OrderView from './feature/order/OrderView';
-import AppNavigation from './navigation/AppNavigation';
 import OrderQty from './feature/order/component/OrderQtyItem';
 import OrderMenu from './feature/order/component/OrderMenu';
+import { AppRouter } from './navigation/AppRouter';
 
 function App() {
   return (
     <div>
-      <AppNavigation/>
+      <AppRouter/>
     </div>
   );
 }

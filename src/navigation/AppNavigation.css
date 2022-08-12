@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 .navigation-container {
     display: flex;
     height: 500px;
-    position: relative;
+    flex-direction: row;
     margin: 0px auto;
     padding: 60px 20px;
     clear: both;
@@ -33,8 +35,8 @@
     color: #777;
     text-align: center;
     height: 36px;
-    border-bottom: 5px solid #EEE;
 }
+
 .navigation-sidebar li a i {
     display: block;
     margin-bottom: 20px;
@@ -59,9 +61,9 @@
 }
 
 .navigation-logout{
-    margin-top: 150px;
+    margin-top: 90px;
     width: 100px;
-    background-color: #009879;
+    background-color: #75551e;
     border: #EEE;
     height: 25px;
     border-radius: 5px;

@@ -1,6 +1,6 @@
 import {Component} from "react";
-import TableForm from "./component/TableForm";
-import TableList from "./component/TableList";
+import TableForm from "./component/TableForm/TableForm";
+import TableList from "./component/TableList/TableList";
 
 class TableView extends Component {
     onUpdateForm = () => {

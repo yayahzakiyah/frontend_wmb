@@ -1,23 +1,23 @@
-import {menus} from "../data"
+export const menuService = ({doGet, doPost}) => {
 
-const MenuService = () => {
-    const getMenuByCategory = async (category) => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                const menusByCat = []
-                for (let menu of menus) {
-                    if (menu.category === category) {
-                        menusByCat = [...menusByCat, menu]
-                    }
-                }
-                resolve(menusByCat)
-            }, 3000)
-        })
+    const getAllMenu = async () => {
+        try {
+            return await doGet({url: '/menu'})
+        } catch (e) {
+            throw e
+        }
     }
 
-    return {
-        getMenuByCategory
+    const createMenu = async (newMenu) => {
+        try {
+            return await doPost({
+                url: '/menu/list',
+                data: newMenu
+            })
+        } catch (e) {
+            throw e
+        }
     }
+
+    return {getAllMenu, createMenu}
 }
-
-export default MenuService
